@@ -4,12 +4,14 @@
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
+%define		_enable_debug_packages	0
+
 %define	module	zope.deprecation
 Summary:	Deprecation library for Python code
 Summary(pl.UTF-8):	Biblioteka odradzająca dla kodu w Pythonie
 Name:		python-%{module}
 Version:	4.0.2
-Release:	4
+Release:	5
 License:	ZPL 2.1
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/z/zope.deprecation/zope.deprecation-%{version}.tar.gz
