@@ -11,7 +11,7 @@ Summary:	Deprecation library for Python code
 Summary(pl.UTF-8):	Biblioteka odradzająca dla kodu w Pythonie
 Name:		python-%{module}
 Version:	4.0.2
-Release:	5
+Release:	6
 License:	ZPL 2.1
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/z/zope.deprecation/zope.deprecation-%{version}.tar.gz
@@ -30,6 +30,7 @@ BuildRequires:	python3-setuptools
 Requires:	python-zope.testing
 Obsoletes:	Zope-Deprecation
 Provides:	Zope-Deprecation
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -68,17 +69,17 @@ Biblioteka odradzająca dla kodu w Pythonie.
 rm -rf $RPM_BUILD_ROOT
 
 %if %{with python2}
-# py_sitedir needed as there is the rest of zope.* and it contains some platform-specific code
+# py_sitescriptdir needed as there is the rest of zope.* and it contains some platform-specific code
 %py_install \
-	--install-purelib=%{py_sitedir}
+	--install-purelib=%{py_sitescriptdir}
 
 %py_postclean
 %endif
 
 %if %{with python3}
-# py_sitedir needed as there is the rest of zope.* and it contains some platform-specific code
+# py_sitescriptdir needed as there is the rest of zope.* and it contains some platform-specific code
 %py3_install \
-	--install-purelib=%{py3_sitedir}
+	--install-purelib=%{py3_sitescriptdir}
 %endif
 
 %clean
@@ -88,17 +89,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES.txt
-%dir %{py_sitedir}/zope/deprecation
-%{py_sitedir}/zope/deprecation/*.py[co]
-%{py_sitedir}/zope.deprecation-*.egg-info
-%{py_sitedir}/zope.deprecation-*-nspkg.pth
+%dir %{py_sitescriptdir}/zope/deprecation
+%{py_sitescriptdir}/zope/deprecation/*.py[co]
+%{py_sitescriptdir}/zope.deprecation-*.egg-info
+%{py_sitescriptdir}/zope.deprecation-*-nspkg.pth
 %endif
 
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
 %doc CHANGES.txt
-%{py3_sitedir}/zope/deprecation
-%{py3_sitedir}/zope.deprecation-*.egg-info
-%{py3_sitedir}/zope.deprecation-*-nspkg.pth
+%{py3_sitescriptdir}/zope/deprecation
+%{py3_sitescriptdir}/zope.deprecation-*.egg-info
+%{py3_sitescriptdir}/zope.deprecation-*-nspkg.pth
 %endif
