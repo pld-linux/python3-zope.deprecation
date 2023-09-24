@@ -9,6 +9,7 @@
 Summary:	Deprecation library for Python code
 Summary(pl.UTF-8):	Biblioteka odradzająca dla kodu w Pythonie
 Name:		python-%{module}
+# keep 4.x here for python2 support
 Version:	4.4.0
 Release:	3
 License:	ZPL v2.1
