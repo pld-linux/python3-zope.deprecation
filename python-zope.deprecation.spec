@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	Biblioteka odradzająca dla kodu w Pythonie
 Name:		python-%{module}
 # keep 4.x here for python2 support
 Version:	4.4.0
-Release:	3
+Release:	4
 License:	ZPL v2.1
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/z/zope.deprecation/zope.deprecation-%{version}.tar.gz
